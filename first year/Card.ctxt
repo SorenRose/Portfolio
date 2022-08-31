@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Card()
+comment1.params=a
+comment1.target=java.awt.Image\ getImage(java.applet.Applet)
+comment2.params=inSuit\ inValue
+comment2.target=Card(int,\ int)
+comment3.params=inSuit
+comment3.target=void\ setSuit(int)
+comment4.params=inValue
+comment4.target=void\ setValue(int)
+comment5.params=
+comment5.target=int\ getSuit()
+comment6.params=
+comment6.target=int\ getValue()
+comment7.params=
+comment7.target=int\ blackJackValue()
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9
