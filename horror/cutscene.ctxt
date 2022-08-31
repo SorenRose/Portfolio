@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=inDelay\ inPic\ inTalk\ inOn
+comment0.target=cutscene(int,\ java.util.ArrayList,\ java.util.ArrayList,\ boolean)
+comment1.params=
+comment1.target=void\ run()
+comment10.params=
+comment10.target=boolean\ getOn()
+comment2.params=inDelay
+comment2.target=void\ setDelay(int)
+comment3.params=inPic
+comment3.target=void\ setImage(java.util.ArrayList)
+comment4.params=
+comment4.target=java.awt.Image\ getImage()
+comment5.params=inX
+comment5.target=void\ setX(int)
+comment6.params=
+comment6.target=int\ getX()
+comment7.params=inTalk
+comment7.target=void\ setAudio(java.util.ArrayList)
+comment8.params=
+comment8.target=java.applet.AudioClip\ getAudio()
+comment9.params=
+comment9.target=void\ nextScene()
+numComments=11
