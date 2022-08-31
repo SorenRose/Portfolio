@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ init()
+comment1.params=anyArray\ g
+comment1.target=void\ outputVert(int[],\ java.awt.Graphics)
+comment2.params=anyArray
+comment2.target=int\ getSum(int[])
+comment3.params=anyArray
+comment3.target=int\ getAverage(int[])
+comment4.params=anyArray
+comment4.target=int\ countNegative(int[])
+comment5.params=anyArray
+comment5.target=int\ getLowest(int[])
+comment6.params=anyArray\ g
+comment6.target=void\ outputLetterGrades(int[],\ java.awt.Graphics)
+comment7.params=anyArray\ g
+comment7.target=void\ reverseArray(int[],\ java.awt.Graphics)
+comment8.params=g
+comment8.target=void\ paint(java.awt.Graphics)
+numComments=9

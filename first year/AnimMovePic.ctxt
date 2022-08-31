@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=inPics\ inDelay\ inX\ inY\ inXChange\ inYChange
+comment0.target=AnimMovePic(java.awt.Image[],\ int,\ int,\ int,\ int,\ int)
+comment1.params=inFrameCt
+comment1.target=void\ setFrameCt(int)
+comment2.params=
+comment2.target=int\ getFrameCt()
+comment3.params=
+comment3.target=java.awt.Image\ getImage()
+comment4.params=inPics
+comment4.target=void\ setImage(java.awt.Image[])
+comment5.params=
+comment5.target=void\ run()
+numComments=6

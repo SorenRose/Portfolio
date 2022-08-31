@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Box()
+comment1.params=inH
+comment1.target=void\ setH(double)
+comment2.params=inL
+comment2.target=void\ setL(double)
+comment3.params=inW
+comment3.target=void\ setW(double)
+comment4.params=
+comment4.target=double\ getH()
+comment5.params=
+comment5.target=double\ getL()
+comment6.params=
+comment6.target=double\ getW()
+numComments=7
