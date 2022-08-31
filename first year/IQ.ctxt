@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=IQ()
+comment1.params=inIQ
+comment1.target=IQ(int)
+comment2.params=inIQ
+comment2.target=void\ setIQ(int)
+comment3.params=
+comment3.target=int\ getIQ()
+comment4.params=
+comment4.target=boolean\ isGenius()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6
