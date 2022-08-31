@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=feet
+comment0.text=A\ simple\ applet\ to\ gat\ inches\ and\ yards\r\n\ Amanda\ Ramos\ Oct\ 3\ 2012\r\n
+comment1.params=
+comment1.target=void\ init()
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=g
+comment3.target=void\ paint(java.awt.Graphics)
+numComments=4

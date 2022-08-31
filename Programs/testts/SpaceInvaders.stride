@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="SpaceInvaders" extends="Applet" extends-java="Applet" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.awt.*" enable="true"/>
+        <import target="java.awt.event.*" enable="true"/>
+        <import target="java.applet.Applet" enable="true"/>
+        <import target="java.util.Random" enable="true"/>
+    </imports>
+    <implements>
+        <implementstype type="Runnable" type-java="Runnable"/>
+        <implementstype type="KeyListener" type-java="KeyListener"/>
+    </implements>
+    <fields>
+        <comment xml:space="preserve">Simple Applet to make a game of Space Inavaders Amanda Ramos, January 28th, 2014</comment>
+        <variable access="protected" type="Thread" type-java="Thread" name="main" value="new Thread(this)" value-java=" new Thread(this)" enable="true"/>
+        <variable access="protected" type="Random" type-java="Random" name="rand" value="new Random()" value-java=" new Random()" enable="true"/>
+        <variable access="protected" type="Font" type-java="Font" name="font" value="new Font(&quot;Century&quot;,1,20)" value-java=" new Font(&quot;Century&quot;, 1, 20)" enable="true"/>
+        <variable access="protected" type="Color" type-java="Color" name="myBrown" value="new Color(110,70,60)" value-java=" new Color(110, 70, 60)" enable="true"/>
+        <variable access="protected" type="int" type-java="int" name="aliensX" value="new int[4][6]" value-java=" new int[4][6]" enable="true"/>
+        <variable access="protected" type="int" type-java="int" name="aliensY" value="new int[4][6]" value-java=" new int[4][6]" enable="true"/>
+        <variable access="protected" type="int" type-java="int" name="xChange" value="10" value-java="10" enable="true"/>
+        <variable access="protected" type="int" type-java="int" name="yChangeCt" value="1" value-java="1" enable="true"/>
+        <variable access="protected" type="int" type-java="int" name="xShip" value="500" value-java="500" enable="true"/>
+        <variable access="protected" type="Image" type-java="Image" name="buffer" enable="true"/>
+        <variable access="protected" type="Graphics" type-java="Graphics" name="bufferG" enable="true"/>
+    </fields>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" type-java="void" name="init" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="this.setLayout(null)" expression-java="this.setLayout(null)" enable="true"/>
+                <call expression="this.addKeyListener(this)" expression-java="this.addKeyListener(this)" enable="true"/>
+                <call expression="resize(1300,700)" expression-java="resize(1300, 700)" enable="true"/>
+                <foreach type="int" type-java="int" var="r" collection="0..3" collection-java="lang.stride.Utility.makeRange(0, 3)" enable="true">
+                    <foreach type="int" type-java="int" var="c" collection="0..5" collection-java="lang.stride.Utility.makeRange(0, 5)" enable="true">
+                        <assign dest="aliensX[r][c]" dest-java="aliensX[r][c]" src="200+60*c" src-java="200 + 60 * c" enable="true"/>
+                        <assign dest="aliensY[r][c]" dest-java="aliensY[r][c]" src="50+50*r" src-java="50 + 50 * r" enable="true"/>
+                    </foreach>
+                </foreach>
+                <assign dest="buffer" dest-java="buffer" src="createImage(this.getWidth(),this.getHeight())" src-java="createImage(this.getWidth(), this.getHeight())" enable="true"/>
+                <assign dest="bufferG" dest-java="bufferG" src="buffer.getGraphics()" src-java="buffer.getGraphics()" enable="true"/>
+                <call expression="main.start()" expression-java="main.start()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="run" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="repaint()" expression-java="repaint()" enable="true"/>
+                <foreach type="int" type-java="int" var="r" collection="0..3" collection-java="lang.stride.Utility.makeRange(0, 3)" enable="true">
+                    <foreach type="int" type-java="int" var="c" collection="0..5" collection-java="lang.stride.Utility.makeRange(0, 5)" enable="true">
+                        <assign dest="aliensX[r][c]" dest-java="aliensX[r][c]" src="aliensX[r][c]+xChange" src-java="aliensX[r][c] + xChange" enable="true"/>
+                        <if condition="aliensX[r][c]==1000" condition-java="aliensX[r][c] == 1000" enable="true">
+                            <ifStatements>
+                                <assign dest="yChangeCt" dest-java="yChangeCt" src="yChangeCt+1" src-java="yChangeCt + 1" enable="true"/>
+                                <assign dest="aliensX[r][c]" dest-java="aliensX[r][c]" src="200" src-java="200" enable="true"/>
+                                <assign dest="aliensY[r][c]=aliensY[r][c]" dest-java="aliensY[r][c] = aliensY[r][c]" src="50+50*r" src-java="50 + 50 * r" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </foreach>
+                </foreach>
+                <try enable="true">
+                    <tryStatements>
+                        <call expression="main.sleep(100)" expression-java="main.sleep(100)" enable="true"/>
+                    </tryStatements>
+                    <catch type="Exception" type-java="Exception" name="e"/>
+                </try>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="paint" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="Graphics" type-java="Graphics" name="g"/>
+            </params>
+            <throws/>
+            <body>
+                <call expression="bufferG.setColor(Color.black)" expression-java="bufferG.setColor(Color.black)" enable="true"/>
+                <call expression="bufferG.fillRect(0,0,10000,10000)" expression-java="bufferG.fillRect(0, 0, 10000, 10000)" enable="true"/>
+                <call expression="bufferG.setFont(font)" expression-java="bufferG.setFont(font)" enable="true"/>
+                <call expression="bufferG.setColor(Color.green)" expression-java="bufferG.setColor(Color.green)" enable="true"/>
+                <foreach type="int" type-java="int" var="r" collection="0..3" collection-java="lang.stride.Utility.makeRange(0, 3)" enable="true">
+                    <foreach type="int" type-java="int" var="c" collection="0..5" collection-java="lang.stride.Utility.makeRange(0, 5)" enable="true">
+                        <call expression="bufferG.fillRect(aliensX[r][c],aliensY[r][c],40,40)" expression-java="bufferG.fillRect(aliensX[r][c], aliensY[r][c], 40, 40)" enable="true"/>
+                    </foreach>
+                </foreach>
+                <call expression="bufferG.setColor(Color.white)" expression-java="bufferG.setColor(Color.white)" enable="true"/>
+                <call expression="bufferG.fillRect(xShip,550,60,40)" expression-java="bufferG.fillRect(xShip, 550, 60, 40)" enable="true"/>
+                <call expression="g.drawImage(buffer,0,0,this)" expression-java="g.drawImage(buffer, 0, 0, this)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="update" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="Graphics" type-java="Graphics" name="g"/>
+            </params>
+            <throws/>
+            <body>
+                <call expression="paint(g)" expression-java="paint(g)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="keyReleased" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="KeyEvent" type-java="KeyEvent" name="e"/>
+            </params>
+            <throws/>
+            <body/>
+        </method>
+        <method access="public" type="void" type-java="void" name="keyTyped" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="KeyEvent" type-java="KeyEvent" name="e"/>
+            </params>
+            <throws/>
+            <body/>
+        </method>
+        <method access="public" type="void" type-java="void" name="keyPressed" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="KeyEvent" type-java="KeyEvent" name="e"/>
+            </params>
+            <throws/>
+            <body>
+                <variable type="int" type-java="int" name="code" value="e.getKeyCode()" value-java="e.getKeyCode()" enable="true"/>
+                <if condition="code==e.VK_RIGHT" condition-java="code == e.VK_RIGHT" enable="true">
+                    <ifStatements>
+                        <assign dest="xShip" dest-java="xShip" src="xShip+20" src-java="xShip + 20" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="code==e.VK_LEFT" condition-java="code == e.VK_LEFT" enable="true">
+                    <ifStatements>
+                        <assign dest="xShip" dest-java="xShip" src="xShip-20" src-java="xShip - 20" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>
